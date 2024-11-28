@@ -17,7 +17,7 @@ const createProduct = async (req, res) => {
     });
     return res
       .status(201)
-      .json(createdProduct);
+      .json({message: "Product is created"});
   } catch (err) {
     return res.status(500).json({ "err": err.message });
   }
