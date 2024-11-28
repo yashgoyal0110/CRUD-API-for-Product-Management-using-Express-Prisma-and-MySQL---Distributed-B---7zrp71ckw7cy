@@ -14,7 +14,7 @@ const partialUpdate = async (req, res) => {
         ...details
       },
     });
-    return res.status(201).json(updatedProduct);
+    return res.status(200).json(updatedProduct);
   } catch (err) {
     return res.status(500).json({ err: err.message });
   }
