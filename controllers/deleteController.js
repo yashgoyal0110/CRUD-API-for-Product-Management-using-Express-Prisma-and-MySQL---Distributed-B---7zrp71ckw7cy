@@ -18,7 +18,6 @@ const deleteProduct = async (req, res) => {
       message: "Product is deleted",
     });
   } catch (err) {
-    console.log(err.message);
     return res.status(500).json({ err: err.message });
   }
 };
