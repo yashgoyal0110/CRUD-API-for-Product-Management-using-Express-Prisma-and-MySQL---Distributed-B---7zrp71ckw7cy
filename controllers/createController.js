@@ -12,10 +12,11 @@ const createProduct = async (req, res) => {
       data: {
         name,
         stock,
-        price,
+        price: parseFloat(price)
       },
     });
-    return res.status(201).json(createdProduct);
+    return res.status(201).json({ ...createdProduct,
+        price: parseFloat(createdProduct.price)});
   } catch (err) {
     return res.status(500).json({ err: err.message });
   }
