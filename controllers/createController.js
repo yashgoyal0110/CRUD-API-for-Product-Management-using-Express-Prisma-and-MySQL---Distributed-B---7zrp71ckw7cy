@@ -10,9 +10,9 @@ const createProduct = async (req, res) => {
     }
     const createdProduct = await prisma.product.create({
       data: {
-        name: name,
-        stock: stock,
-        price: price,
+        name,
+        stock,
+        price,
       },
     });
     return res.status(201).json(createdProduct);

@@ -1,10 +1,8 @@
 const express = require('express');
 const productRoutes = require('./routes/productRoutes');
-const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
 app.use(express.json());
-app.use(authMiddleware)
 
 // Product routes 
 app.use('/api/products', productRoutes);
