@@ -4,15 +4,9 @@ const fullUpdate = async (req, res) => {
   try {
     const details = req.body;
     const { id } = req.params;
-    let fetchedProduct = await prisma.product.findUnique({
-      where: { id: parseInt(id) },
-    });
-
     const updatedProduct = await prisma.product.update({
       where: { id: parseInt(id) },
-      data: {
-        ...details,
-      },
+      data: details
     });
     return res.status(200).json(updatedProduct);
   } catch (err) {

@@ -12,12 +12,12 @@ const createProduct = async (req, res) => {
       data: {
         name,
         stock,
-        price: price,
+        price,
       },
     });
     return res
       .status(201)
-      .json({ ...createdProduct});
+      .json(createdProduct);
   } catch (err) {
     return res.status(500).json({ "err": err.message });
   }
