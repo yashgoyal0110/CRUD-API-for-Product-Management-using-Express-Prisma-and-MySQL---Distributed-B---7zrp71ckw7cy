@@ -10,7 +10,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 router.post("/create", createProduct);
 router.get("/get", getAllProducts);
-router.get("/get/:id", getProduct);
+router.get("/getById/:id", getProduct);
 router.put("/put/:id", authMiddleware, fullUpdate);
 router.patch("/patch/:id", authMiddleware, partialUpdate);
 router.delete("/delete/:id", authMiddleware,deleteProduct);
