@@ -8,7 +8,7 @@ const deleteProduct = require("../controllers/deleteController");
 const authMiddleware = require("../middleware/authMiddleware");
 
 const router = express.Router();
-router.post("/create", authMiddleware, createProduct);
+router.post("/create", createProduct);
 router.get("/get", authMiddleware, getAllProducts);
 router.get("/getById/:id", authMiddleware, getProduct);
 router.put("/put/:id", authMiddleware, fullUpdate);
