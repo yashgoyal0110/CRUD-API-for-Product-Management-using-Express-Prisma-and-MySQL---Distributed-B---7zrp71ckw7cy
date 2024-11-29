@@ -1,7 +1,7 @@
 const {API_AUTH_KEY} = require('./authkey')
 
 const authMiddleware = (req, res, next) => {
-  const apiAuthKey = req.headers["apiAuthKey"];
+  const apiAuthKey = req.headers["apiauthkey"];
   if (!apiAuthKey) {
     return res.status(401).json({ message: "Access denied, apiauthkey is missing" });
   }
