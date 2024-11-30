@@ -11,7 +11,7 @@ const partialUpdate = async (req, res) => {
     const updatedProduct = await prisma.product.update({
         where : {id: parseInt(id)},
       data: {
-        ...details
+        ...details, price: parseFloat(details.price)
       },
     });
     return res.status(200).json(updatedProduct);

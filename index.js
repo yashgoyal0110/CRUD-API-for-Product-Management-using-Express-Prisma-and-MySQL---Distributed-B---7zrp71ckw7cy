@@ -4,7 +4,7 @@ const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
 app.use(express.json());
-app.use(authMiddleware)
+// app.use(authMiddleware)
 
 // Product routes 
 app.use('/api/products', productRoutes);

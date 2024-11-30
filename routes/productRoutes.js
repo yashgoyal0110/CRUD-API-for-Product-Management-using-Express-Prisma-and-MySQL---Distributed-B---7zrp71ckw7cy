@@ -6,7 +6,6 @@ const fullUpdate = require("../controllers/fullUpdateController");
 const partialUpdate = require("../controllers/partialUpdateController");
 const deleteProduct = require("../controllers/deleteController");
 
-
 const router = express.Router();
 router.post("/create", createProduct);
 router.get("/get", getAllProducts);

@@ -8,7 +8,7 @@ const fullUpdate = async (req, res) => {
       where: { id: parseInt(id) },
       data: details
     });
-    return res.status(200).json(updatedProduct);
+    return res.status(200).json({...updatedProduct, price: parseFloat(updatedProduct.price)});
   } catch (err) {
     console.log(err.message);
     return res.status(500).json({ err: err.message });
