@@ -6,7 +6,7 @@ const fullUpdate = async (req, res) => {
     const { id } = req.params;
     const updatedProduct = await prisma.product.update({
       where: { id: parseInt(id) },
-      data: details
+      data: {...details}
     });
     return res.status(200).json(updatedProduct);
   } catch (err) {
